@@ -100,7 +100,7 @@ const Hero = ({ id }: { id: string }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="relative z-10 mx-auto w-64 h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 transform transition-all duration-300 hover:shadow-3xl hover:-translate-y-1">
+            <div className="relative z-10 mx-auto w-80 h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 transform transition-all duration-300 hover:shadow-3xl hover:-translate-y-1">
               <div className="w-full h-full">
                 <img
                   className="w-full h-full object-cover"
