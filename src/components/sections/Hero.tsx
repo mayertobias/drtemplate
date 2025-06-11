@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import DoctorImage from '../../assets/drpavls.png';
+import DoctorImage from '../../assets/drjpeg.jpg';
 
 const Hero = ({ id }: { id: string }) => {
   return (
