@@ -26,7 +26,7 @@ const locations = [
     phone: '+91 891 274 5678',
     email: 'info@motherlyhospital.com',
     hours: '24/7 Emergency Services\nOPD: 9:00 AM - 9:00 PM',
-    mapUrl: 'https://maps.app.goo.gl/tUYzTd8AaaT3TafBA',
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.6539563848414!2d83.314397!3d17.713799899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3943001dc54403%3A0x9b5acd56306aca88!2sMotherly%20Women%20%26%20Children%20Hospital!5e0!3m2!1sen!2sin!4v1749744970021!5m2!1sen!2sin',
     features: [
       'Pediatric Emergency',
       'Neonatal Intensive Care',
