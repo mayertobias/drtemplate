@@ -15,7 +15,7 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: 'Sangeeta Rao',
     role: 'Mother of 3-year-old',
-    content: 'Dr. Sai Piridi has been our pediatrician since my daughter was born. His diagnosis is always accurate, and he explains everything in simple terms. The clinic in Seethammadhara is very clean and child-friendly.',
+    content: 'Dr. Sai Piridi has been our pediatrician since my daughter was born. His diagnosis is always accurate, and he explains everything in simple terms. The clinic is very clean and child-friendly.',
     rating: 5,
     image: '/images/testimonial-1.jpg'
   },
@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
     id: 4,
     name: 'Kiran Kumar',
     role: 'Father of 2',
-    content: 'We\'ve been visiting Dr. Sai\'s clinic in Siripuram for 4 years. The staff is very cooperative, and Dr. Sai\'s treatment is excellent. He remembers all the details about my children\'s medical history.',
+    content: 'We\'ve been visiting Dr. Sai for 4 years. The staff is very cooperative, and Dr. Sai\'s treatment is excellent. He remembers all the details about my children\'s medical history.',
     rating: 4,
     image: '/images/testimonial-4.jpg'
   },
@@ -55,7 +55,7 @@ const testimonials: Testimonial[] = [
     id: 6,
     name: 'Anand Varma',
     role: 'Father of 1-year-old',
-    content: 'We visited Dr. Sai at the Arilova branch. The clinic is well-maintained, and the doctor is very knowledgeable. He gave us practical advice that really helped with our baby\'s colic issues.',
+    content: 'We visited Dr. Sai at the Motherly Hospital. The clinic is well-maintained, and the doctor is very knowledgeable. He gave us practical advice that really helped with our baby\'s colic issues.',
     rating: 4,
     image: '/images/testimonial-6.jpg'
   }

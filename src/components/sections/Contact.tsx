@@ -1,39 +1,26 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/react/24/outline';
 
 const Contact = ({ id }: { id: string }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission (e.g., send to API)
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
-    // Show success message (you can implement a toast notification here)
-    alert('Thank you for your message. We will get back to you soon!');
-  };
+  // Clinic information for booking appointments
+  const clinics = [
+    {
+      name: 'Cure Children Clinic',
+      address: 'D.No. 50-50-12/3, Main Road, Seethammadhara, Visakhapatnam - 530013',
+      phone: '+91 891 273 4567',
+      email: 'seethammadhara@drsaipiridi.com',
+      hours: 'Monday - Saturday: 9:00 AM - 9:00 PM\nSunday: 9:00 AM - 2:00 PM',
+      emergency: true
+    },
+    {
+      name: 'Motherly Women & Children Hospital',
+      address: 'Door No. 11-13-3/1, Waltair Main Road, Near RTC Complex, Visakhapatnam - 530003',
+      phone: '+91 891 274 5678',
+      email: 'info@motherlyhospital.com',
+      hours: '24/7 Emergency Services\nOPD: 9:00 AM - 9:00 PM',
+      emergency: true
+    }
+  ];
 
   return (
     <section id={id} className="bg-gray-50 dark:bg-gray-900 py-16 sm:py-24">
@@ -93,16 +80,14 @@ const Contact = ({ id }: { id: string }) => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">Our Locations</h4>
                     <p className="mt-1 text-gray-600 dark:text-gray-300">
+                      <strong>Cure Children Clinic</strong><br />
                       D.No. 50-50-12/3, Main Road<br />
                       Seethammadhara, Visakhapatnam - 530013
                     </p>
                     <p className="mt-2 text-gray-600 dark:text-gray-300">
-                      Rainbow Children's Clinic, Siripuram<br />
-                      Visakhapatnam, Andhra Pradesh 530003
-                    </p>
-                    <p className="mt-2 text-gray-600 dark:text-gray-300">
-                      Rainbow Children's Hospital, Arilova<br />
-                      Visakhapatnam, Andhra Pradesh 530040
+                      <strong>Motherly Women & Children Hospital</strong><br />
+                      Door No. 11-13-3/1, Waltair Main Road<br />
+                      Near RTC Complex, Visakhapatnam - 530003
                     </p>
                   </div>
                 </div>
@@ -156,109 +141,84 @@ const Contact = ({ id }: { id: string }) => {
               </div>
             </motion.div>
 
-            {/* Contact Form */}
+            {/* Appointment Booking Information */}
             <motion.div 
-              className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8"
+              className="space-y-8"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send Us a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Full Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white"
-                  />
-                </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Book an Appointment</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  To schedule an appointment, please contact us directly at one of our locations. Our staff will be happy to assist you in finding a convenient time for your visit.
+                </p>
+                
+                <div className="space-y-8">
+                  {clinics.map((clinic, index) => (
+                    <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                      <h4 className="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-3">{clinic.name}</h4>
+                      
+                      <div className="space-y-4">
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0 bg-indigo-100 dark:bg-indigo-900/30 p-2 rounded-full">
+                            <PhoneIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                          </div>
+                          <div className="ml-4">
+                            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Phone</p>
+                            <a 
+                              href={`tel:${clinic.phone.replace(/\D/g, '')}`} 
+                              className="text-base font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400"
+                            >
+                              {clinic.phone}
+                            </a>
+                            {clinic.emergency && (
+                              <p className="mt-1 text-sm text-amber-600 dark:text-amber-400">
+                                Emergency: <a href="tel:+919100123456" className="hover:underline">+91 91001 23456</a>
+                              </p>
+                            )}
+                          </div>
+                        </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                      Email <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white"
-                    />
-                  </div>
-                </div>
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0 bg-indigo-100 dark:bg-indigo-900/30 p-2 rounded-full">
+                            <EnvelopeIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                          </div>
+                          <div className="ml-4">
+                            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Email</p>
+                            <a 
+                              href={`mailto:${clinic.email}`} 
+                              className="text-base font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400"
+                            >
+                              {clinic.email}
+                            </a>
+                          </div>
+                        </div>
 
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Subject <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white"
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="appointment">Book an Appointment</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="billing">Billing Question</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0 bg-indigo-100 dark:bg-indigo-900/30 p-2 rounded-full">
+                            <ClockIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                          </div>
+                          <div className="ml-4">
+                            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Working Hours</p>
+                            <p className="text-base text-gray-600 dark:text-gray-300 whitespace-pre-line">{clinic.hours}</p>
+                          </div>
+                        </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Message <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="mt-1 block w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white"
-                  />
+                        <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                          <a
+                            href={`tel:${clinic.phone.replace(/\D/g, '')}`}
+                            className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          >
+                            Call to Book Appointment
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-
-                <div className="flex items-center">
-                  <button
-                    type="submit"
-                    className="px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
-                  >
-                    Send Message
-                  </button>
-                  <p className="ml-4 text-sm text-gray-500 dark:text-gray-400">
-                    We'll get back to you within 24 hours.
-                  </p>
-                </div>
-              </form>
+              </div>
             </motion.div>
           </div>
         </div>

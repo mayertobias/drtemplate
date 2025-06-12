@@ -5,38 +5,8 @@ import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon } from '@heroicons/react
 // Location data
 const locations = [
   {
-    id: 'rainbow_siripuram',
-    name: 'Rainbow Children\'s Clinic, Siripuram',
-    address: 'Door No. 11-1-1, Ground Floor, Beside SBI Bank, Siripuram, Visakhapatnam - 530003',
-    phone: '+91 891 271 2345',
-    email: 'siripuram@drsaipiridi.com',
-    hours: 'Mon-Sat: 9:00 AM - 1:00 PM & 5:00 PM - 8:00 PM\nSun: 9:00 AM - 1:00 PM',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.123456789012!2d83.3000!3d17.7000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQyJzAwLjAiTiA4M8KwMTgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
-    features: [
-      'General Pediatrics',
-      'Vaccination',
-      'Well-baby checks',
-      'Growth monitoring'
-    ]
-  },
-  {
-    id: 'rainbow_arilova',
-    name: 'Rainbow Children\'s Hospital, Arilova',
-    address: 'Plot No. 2, Sector 5, MVP Colony, Arilova, Visakhapatnam - 530017',
-    phone: '+91 891 272 3456',
-    email: 'arilova@drsaipiridi.com',
-    hours: '24/7 Emergency Services\nOPD: 10:00 AM - 8:00 PM',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.123456789013!2d83.3500!3d17.7500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ1JzAwLjAiTiA4M8IwMCcwMC4wIkU!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
-    features: [
-      'Pediatric Emergency',
-      'Neonatal Intensive Care',
-      'Inpatient Services',
-      'Specialty Clinics'
-    ]
-  },
-  {
-    id: 'seethammadhara',
-    name: 'Seethammadhara Clinic',
+    id: 'cure_children',
+    name: 'Cure Children Clinic, Seethammadhara',
     address: 'D.No. 50-50-12/3, Main Road, Seethammadhara, Visakhapatnam - 530013',
     phone: '+91 891 273 4567',
     email: 'seethammadhara@drsaipiridi.com',
@@ -47,6 +17,21 @@ const locations = [
       'Vaccination',
       'Minor Procedures',
       'Nutritional Counseling'
+    ]
+  },
+  {
+    id: 'motherly_hospital',
+    name: 'Motherly Women & Children Hospital',
+    address: 'Door No. 11-13-3/1, Waltair Main Road, Near RTC Complex, Visakhapatnam - 530003',
+    phone: '+91 891 274 5678',
+    email: 'info@motherlyhospital.com',
+    hours: '24/7 Emergency Services\nOPD: 9:00 AM - 9:00 PM',
+    mapUrl: 'https://maps.app.goo.gl/tUYzTd8AaaT3TafBA',
+    features: [
+      'Pediatric Emergency',
+      'Neonatal Intensive Care',
+      'Child & Mother Care',
+      'Specialty Pediatric Services'
     ]
   }
 ];
