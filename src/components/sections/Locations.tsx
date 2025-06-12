@@ -98,19 +98,17 @@ const Locations = ({ id }: { id: string }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8"
+            className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch"
           >
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow">
-              <div className="aspect-w-16 aspect-h-9">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg flex flex-col">
+              <div className="h-0 pb-[56.25%] relative">
                 <iframe
                   src={activeLocation.mapUrl}
-                  width="100%"
-                  height="100%"
+                  className="absolute top-0 left-0 w-full h-full"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   title={`${activeLocation.name} Location`}
-                  className="min-h-[400px] w-full"
                 ></iframe>
               </div>
               <div className="p-6">
@@ -150,7 +148,7 @@ const Locations = ({ id }: { id: string }) => {
                   </div>
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-6 flex-grow">
                   <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-3">Services at this location:</h4>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {activeLocation.features.map((feature, index) => (
@@ -166,36 +164,38 @@ const Locations = ({ id }: { id: string }) => {
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-6">
+            <div className="space-y-6 flex flex-col h-full">
+              <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-6 flex-1 flex flex-col">
                 <h3 className="text-xl font-bold text-indigo-800 dark:text-indigo-200 mb-4">Schedule an Appointment</h3>
-                <p className="text-indigo-700 dark:text-indigo-300 mb-4">
+                <p className="text-indigo-700 dark:text-indigo-300 mb-6">
                   Book your appointment online or call us directly at {activeLocation.phone}.
                 </p>
-                <div className="mt-4 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                  <a
-                    href="#contact"
-                    className="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
-                  >
-                    Book Online
-                  </a>
-                  <a
-                    href={`tel:${activeLocation.phone.replace(/\D/g, '')}`}
-                    className="inline-flex justify-center items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md shadow-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
-                  >
-                    Call Now
-                  </a>
+                <div className="mt-auto">
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="#contact"
+                      className="flex-1 text-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
+                    >
+                      Book Online
+                    </a>
+                    <a
+                      href={`tel:${activeLocation.phone.replace(/\D/g, '')}`}
+                      className="flex-1 text-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md shadow-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
+                    >
+                      Call Now
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
-                <div className="p-6">
-                  <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">Office Hours</h3>
-                  <div className="space-y-2">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex-1">
+                <div className="p-6 h-full flex flex-col">
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Office Hours</h3>
+                  <div className="space-y-3 flex-grow">
                     {activeLocation.hours.split('\n').map((line, i) => (
-                      <div key={i} className="flex justify-between">
+                      <div key={i} className="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700 last:border-0">
                         <span className="text-gray-600 dark:text-gray-300">{line.split(':')[0]}:</span>
-                        <span className="font-medium text-gray-900 dark:text-white">
+                        <span className="font-medium text-gray-900 dark:text-white text-right">
                           {line.split(':').slice(1).join(':').trim()}
                         </span>
                       </div>
