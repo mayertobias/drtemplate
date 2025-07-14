@@ -103,9 +103,6 @@ const Contact = ({ id }: { id: string }) => {
                         +91 9731816747
                       </a>
                     </p>
-                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                      Emergency: <a href="tel:+919100123456" className="text-indigo-600 dark:text-indigo-400 hover:underline">+91 91001 23456</a>
-                    </p>
                   </div>
                 </div>
 
@@ -131,9 +128,6 @@ const Contact = ({ id }: { id: string }) => {
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">Working Hours</h4>
                     <div className="mt-1 space-y-1">
                       <p className="text-gray-600 dark:text-gray-300">Monday - Sunday: 7:00 PM - 9:00 PM</p>
-                      <p className="text-sm text-amber-600 dark:text-amber-400 mt-2">
-                        Emergency services available 24/7 at Seethammadhara Clinic
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -172,11 +166,6 @@ const Contact = ({ id }: { id: string }) => {
                             >
                               {clinic.phone}
                             </a>
-                            {clinic.emergency && (
-                              <p className="mt-1 text-sm text-amber-600 dark:text-amber-400">
-                                Emergency: <a href="tel:+919100123456" className="hover:underline">+91 91001 23456</a>
-                              </p>
-                            )}
                           </div>
                         </div>
 
