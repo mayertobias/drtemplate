@@ -7,10 +7,10 @@ const locations = [
   {
     id: 'cure_children',
     name: 'Cure Children Clinic, Seethammadhara',
-    address: 'D.No. 50-50-12/3, Main Road, Seethammadhara, Visakhapatnam - 530013',
-    phone: '+91 891 273 4567',
-    email: 'seethammadhara@drsaipiridi.com',
-    hours: 'Mon-Sat: 10:00 AM - 1:00 PM & 5:00 PM - 8:00 PM\nSun: Closed',
+    address: 'KRM Colony main road 51-8-42/10, bharath apartment, beside canara bank, rythu bazaar, road, backside, Visakhapatnam, Andhra Pradesh 530013',
+    phone: '+91 9731816747',
+    email: 'dr.lakshman.1@gmail.com',
+    hours: 'Mon-Sun: 7:00 PM - 9:00 PM',
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.123456789014!2d83.3200!3d17.7300!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ0JzAwLjAiTiA4M8IxMScwMC4wIkU!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin',
     features: [
       'Pediatric Consultation',
@@ -22,8 +22,8 @@ const locations = [
   {
     id: 'motherly_hospital',
     name: 'Motherly Women & Children Hospital',
-    address: 'Door No. 11-13-3/1, Waltair Main Road, Near RTC Complex, Visakhapatnam - 530003',
-    phone: '+91 891 274 5678',
+    address: 'D, 15-1-1/1, Nowroji Rd, Daspalla Hills, Maharani Peta, Visakhapatnam, Andhra Pradesh 530002',
+    phone: '+91 85005 63789',
     email: 'info@motherlyhospital.com',
     hours: '24/7 Emergency Services\nOPD: 9:00 AM - 9:00 PM',
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.6539563848414!2d83.314397!3d17.713799899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3943001dc54403%3A0x9b5acd56306aca88!2sMotherly%20Women%20%26%20Children%20Hospital!5e0!3m2!1sen!2sin!4v1749744970021!5m2!1sen!2sin',
@@ -232,7 +232,7 @@ const Locations = ({ id }: { id: string }) => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z" />
                       </svg>
                       <span className="text-gray-700 dark:text-gray-300">
-                        <span className="font-medium">Public Transport:</span> 5 min walk from {activeLocation.name === 'Hyderabad' ? 'Hitech City Metro Station' : 'Beach Road Bus Stop'}
+                        <span className="font-medium">Public Transport:</span> 5 min walk from {activeLocation.name === 'Cure Children Clinic, Seethammadhara' ? 'Rythu Bazaar Bus Stop' : 'Beach Road Bus Stop'}
                       </span>
                     </li>
                     <li className="flex items-start">

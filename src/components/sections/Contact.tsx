@@ -6,16 +6,16 @@ const Contact = ({ id }: { id: string }) => {
   const clinics = [
     {
       name: 'Cure Children Clinic',
-      address: 'D.No. 50-50-12/3, Main Road, Seethammadhara, Visakhapatnam - 530013',
-      phone: '+91 891 273 4567',
-      email: 'seethammadhara@drsaipiridi.com',
-      hours: 'Monday - Saturday: 9:00 AM - 9:00 PM\nSunday: 9:00 AM - 2:00 PM',
+      address: 'KRM Colony main road 51-8-42/10, bharath apartment, beside canara bank, rythu bazaar, road, backside, Visakhapatnam, Andhra Pradesh 530013',
+      phone: '+91 9731816747',
+      email: 'dr.lakshman.1@gmail.com',
+      hours: 'Monday - Sunday: 7:00 PM - 9:00 PM',
       emergency: true
     },
     {
       name: 'Motherly Women & Children Hospital',
-      address: 'Door No. 11-13-3/1, Waltair Main Road, Near RTC Complex, Visakhapatnam - 530003',
-      phone: '+91 891 274 5678',
+      address: 'D, 15-1-1/1, Nowroji Rd, Daspalla Hills, Maharani Peta, Visakhapatnam, Andhra Pradesh 530002',
+      phone: '+91 85005 63789',
       email: 'info@motherlyhospital.com',
       hours: '24/7 Emergency Services\nOPD: 9:00 AM - 9:00 PM',
       emergency: true
@@ -81,13 +81,13 @@ const Contact = ({ id }: { id: string }) => {
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">Our Locations</h4>
                     <p className="mt-1 text-gray-600 dark:text-gray-300">
                       <strong>Cure Children Clinic</strong><br />
-                      D.No. 50-50-12/3, Main Road<br />
-                      Seethammadhara, Visakhapatnam - 530013
+                      KRM Colony main road 51-8-42/10, bharath apartment,<br />
+                      beside canara bank, rythu bazaar, road, backside,<br />Visakhapatnam, Andhra Pradesh 530013
                     </p>
                     <p className="mt-2 text-gray-600 dark:text-gray-300">
                       <strong>Motherly Women & Children Hospital</strong><br />
-                      Door No. 11-13-3/1, Waltair Main Road<br />
-                      Near RTC Complex, Visakhapatnam - 530003
+                      D, 15-1-1/1, Nowroji Rd, Daspalla Hills,<br />
+                      Maharani Peta, Visakhapatnam, Andhra Pradesh 530002
                     </p>
                   </div>
                 </div>
@@ -99,8 +99,8 @@ const Contact = ({ id }: { id: string }) => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">Phone</h4>
                     <p className="mt-1 text-gray-600 dark:text-gray-300">
-                      <a href="tel:+918912734567" className="hover:text-indigo-600 dark:hover:text-indigo-400">
-                        +91 891 273 4567
+                      <a href="tel:+919731816747" className="hover:text-indigo-600 dark:hover:text-indigo-400">
+                        +91 9731816747
                       </a>
                     </p>
                     <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
@@ -116,8 +116,8 @@ const Contact = ({ id }: { id: string }) => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">Email</h4>
                     <p className="mt-1 text-gray-600 dark:text-gray-300">
-                      <a href="mailto:seethammadhara@drsaipiridi.com" className="hover:text-indigo-600 dark:hover:text-indigo-400">
-                        seethammadhara@drsaipiridi.com
+                      <a href="mailto:dr.lakshman.1@gmail.com" className="hover:text-indigo-600 dark:hover:text-indigo-400">
+                        dr.lakshman.1@gmail.com
                       </a>
                     </p>
                   </div>
@@ -130,8 +130,7 @@ const Contact = ({ id }: { id: string }) => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white">Working Hours</h4>
                     <div className="mt-1 space-y-1">
-                      <p className="text-gray-600 dark:text-gray-300">Monday - Saturday: 9:00 AM - 9:00 PM</p>
-                      <p className="text-gray-600 dark:text-gray-300">Sunday: 9:00 AM - 2:00 PM</p>
+                      <p className="text-gray-600 dark:text-gray-300">Monday - Sunday: 7:00 PM - 9:00 PM</p>
                       <p className="text-sm text-amber-600 dark:text-amber-400 mt-2">
                         Emergency services available 24/7 at Seethammadhara Clinic
                       </p>
